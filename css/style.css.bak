@@ -1,0 +1,223 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #fff5c0;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 650px;
+}
+
+.face {
+	position: absolute;
+	z-index: 1;
+	top: 55px;
+	left: 58px;
+	width: 500px;
+	height: 470px;
+	border: 6px solid #9d3d41;
+	background: #ffa8b4;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.arm {
+	position: absolute;
+	top: 70px;
+	left: 10px;
+	width: 170px;
+	height: 180px;
+	background: #ffa8b4;
+	border: 6px solid #9d3d41;
+	border-radius: 100% 40% 100% 70%/100% 80% 100% 80%;
+	-webkit-border-radius: 100% 40% 100% 70%/100% 80% 100% 80%;
+	-moz-border-radius: 100% 40% 100% 70%/100% 80% 100% 80%;
+	transform: rotate(140deg);
+}
+
+.arm.right {
+	position: absolute;
+	z-index: 1;
+	top: 266px;
+	left: 420px;
+	width: 170px;
+	height: 180px;
+	border: 6px solid;
+	border-radius: 100% 80% 100% 80%/100% 90% 100% 80%;
+	-webkit-border-radius: 100% 80% 100% 80%/100% 90% 100% 80%;
+	-moz-border-radius: 100% 80% 100% 80%/100% 90% 100% 80%;
+	border-color: #9d3d41 #9d3d41 transparent transparent;
+	transform: rotate(76deg);
+}
+
+.eye {
+	position: absolute;
+	z-index: 1;
+	top: 140px;
+	left: 230px;
+	width: 50px;
+	height: 140px;
+	background: #9d3d41;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.eye:before {
+	position: absolute;
+	content: '';
+	left: 110px;
+	width: 50px;
+	height: 140px;
+	background: #9d3d41;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.white {
+	z-index: 1;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	width: 30px;
+	height: 60px;
+	background: #fff;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.white:before {
+	position: absolute;
+	content: '';
+	left: 110px;
+	width: 30px;
+	height: 60px;
+	background: #fff;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.blue {
+	position: absolute;
+	top: 88px;
+	left: 12px;
+	width: 26px;
+	height: 35px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	box-shadow: 0 10px 0 0 #4683d6;
+}
+
+.blue.right {
+	position: absolute;
+	top: 88px;
+	left: 122px;
+	width: 26px;
+	height: 35px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	box-shadow: 0 10px 0 0 #4683d6;
+}
+
+.blush {
+	z-index: 1;
+	position: absolute;
+	top: 260px;
+	left: 150px;
+	width: 70px;
+	height: 40px;
+	background: #ff81aa;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	transform: rotate(10deg);
+}
+
+.blush:before {
+	position: absolute;
+	content: '';
+	bottom: 42px;
+	left: 240px;
+	width: 70px;
+	height: 40px;
+	background: #ff81aa;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	transform: rotate(-20deg);
+}
+
+.mouth {
+	position: absolute;
+	z-index: 1;
+	top: 290px;
+	left: 283px;
+	width: 55px;
+	height: 45px;
+	background: #9d3d41;
+	border-radius: 100% 100% 100px 100px;
+	-webkit-border-radius: 100% 100% 100px 100px;
+	-moz-border-radius: 100% 100% 100px 100px;
+}
+
+.tongue {
+	position: absolute;
+	top: 11px;
+	left: 6px;
+	width: 43px;
+	height: 29px;
+	background: #fe728f;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+
+.foot {
+	z-index: 0;
+	position: absolute;
+	top: 425px;
+	left: 10px;
+	width: 290px;
+	height: 140px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	background: #ff6692;
+	border: 6px solid #9d3d41;
+	border-radius: 50% 50% 100% 50%/40% 40% 100% 100%;
+	-webkit-border-radius: 50% 50% 100% 50%/40% 40% 100% 100%;
+	-moz-border-radius: 50% 50% 100% 50%/40% 40% 100% 100%;
+	transform: rotate(177deg);
+}
+
+.foot.right {
+	z-index: 0;
+	position: absolute;
+	top: 425px;
+	left: 310px;
+	width: 290px;
+	height: 140px;
+	border: 6px solid #9d3d41;
+	border-radius: 50% 50% 50% 100%/40% 40% 100% 100%;
+	-webkit-border-radius: 50% 50% 50% 100%/40% 40% 100% 100%;
+	-moz-border-radius: 50% 50% 50% 100%/40% 40% 100% 100%;
+	transform: rotate(183deg);
+}
+
+/*要找到这里是相当困难的*/
+/*也许*/
+/*喜欢你喜欢你喜欢你喜欢你喜欢你喜欢你喜欢你喜欢你*/
+/*指吃饭同学*/
