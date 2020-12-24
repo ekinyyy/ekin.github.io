@@ -1,144 +1,111 @@
-var mouse = {x: 0, y: 0};
-var myWidth = 0, myHeight = 0;
-var mouseIsDown = false;
-var mouseIsDownDivision = false;
-
-document.addEventListener('mousemove', function(e){ 
-    mouse.x = e.clientX || e.pageX; 
-    mouse.y = e.clientY || e.pageY 
-      updateDimensions();
-
-    //if(mouseIsDown) {
-       document.getElementById("sun").style.background = '-webkit-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(242,248,247,1) 0%,rgba(249,249,28,1) 3%,rgba(247,214,46,1) 8%, rgba(248,200,95,1) 12%,rgba(201,165,132,1) 30%,rgba(115,130,133,1) 51%,rgba(46,97,122,1) 85%,rgba(24,75,106,1) 100%)';
-      document.getElementById("sun").style.background = '-moz-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(242,248,247,1) 0%,rgba(249,249,28,1) 3%,rgba(247,214,46,1) 8%, rgba(248,200,95,1) 12%,rgba(201,165,132,1) 30%,rgba(115,130,133,1) 51%,rgba(46,97,122,1) 85%,rgba(24,75,106,1) 100%)';
-      document.getElementById("sun").style.background = '-ms-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(242,248,247,1) 0%,rgba(249,249,28,1) 3%,rgba(247,214,46,1) 8%, rgba(248,200,95,1) 12%,rgba(201,165,132,1) 30%,rgba(115,130,133,1) 51%,rgba(46,97,122,1) 85%,rgba(24,75,106,1) 100%)';
-
-      document.getElementById("sunDay").style.background = '-webkit-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(252,255,251,0.9) 0%,rgba(253,250,219,0.4) 30%,rgba(226,219,197,0.01) 70%, rgba(226,219,197,0.0) 70%,rgba(201,165,132,0) 100%)';
-      document.getElementById("sunDay").style.background = '-moz-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(252,255,251,0.9) 0%,rgba(253,250,219,0.4) 30%,rgba(226,219,197,0.01) 70%, rgba(226,219,197,0.0) 70%,rgba(201,165,132,0) 100%)';
-      document.getElementById("sunDay").style.background = '-ms-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(252,255,251,0.9) 0%,rgba(253,250,219,0.4) 30%,rgba(226,219,197,0.01) 70%, rgba(226,219,197,0.0) 70%,rgba(201,165,132,0) 100%)';
-
-      document.getElementById("sunSet").style.background = '-webkit-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(254,255,255,0.8) 5%,rgba(236,255,0,1) 10%,rgba(253,50,41,1) 25%, rgba(243,0,0,1) 40%,rgba(93,0,0,1) 100%)';
-      document.getElementById("sunSet").style.background = '-moz-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(254,255,255,0.8) 5%,rgba(236,255,0,1) 10%,rgba(253,50,41,1) 25%, rgba(243,0,0,1) 40%,rgba(93,0,0,1) 100%)';
-      document.getElementById("sunSet").style.background = '-ms-radial-gradient(' + mouse.x + 'px ' + mouse.y + 'px, circle, rgba(254,255,255,0.8) 5%,rgba(236,255,0,1) 10%,rgba(253,50,41,1) 25%, rgba(243,0,0,1) 40%,rgba(93,0,0,1) 100%)';
-
-      document.getElementById("waterReflectionContainer").style.perspectiveOrigin = (mouse.x/myWidth*100).toString() + "% -15%";
-      document.getElementById("waterReflectionMiddle").style.left = (mouse.x-myWidth-(myWidth*.03)).toString() + "px";
-
-      var bodyWidth = document.getElementsByTagName("body")[0].clientWidth;
-
-      document.getElementById("sun").style.width = (bodyWidth);
-      document.getElementById("sun").style.left = "0px";
-      document.getElementById("sunDay").style.width = (bodyWidth);
-      document.getElementById("sunDay").style.left = "0px";
-      
-      var sky = document.getElementById("sun");
-      var water = document.getElementById("water");
-      var waterHeight = water.clientHeight;
-      var skyHeight = sky.clientHeight;
-      var skyRatio = mouse.y / skyHeight;
-      var waterRatio = waterHeight / myHeight;
-      document.getElementById("darknessOverlay").style.opacity = Math.min((mouse.y-(myHeight/2)) / (myHeight/2), 1);
-      document.getElementById("darknessOverlaySky").style.opacity = Math.min((mouse.y-(myHeight*7/10)) / (myHeight-(myHeight*7/10)), 1);
-      document.getElementById("moon").style.opacity = Math.min((mouse.y-(myHeight*9/10)) / (myHeight-(myHeight*9/10)), 0.65);
-      document.getElementById("horizonNight").style.opacity = (mouse.y-(myHeight*4/5)) / (myHeight-(myHeight*4/5));
-
-      document.getElementById("starsContainer").style.opacity = (mouse.y/myHeight-0.6);
-
-      document.getElementById("waterDistance").style.opacity = (mouse.y/myHeight+0.6);
-      document.getElementById("sunDay").style.opacity = (1-mouse.y/myHeight);
-      document.getElementById("sky").style.opacity = Math.min((1-mouse.y/myHeight), 0.99);
-
-      document.getElementById("sunSet").style.opacity = (mouse.y/myHeight-0.2);
+(function() {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
 
 
+var flakes = [],
+    canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext("2d"),
+    flakeCount = 400,
+    mX = -100,
+    mY = -100
 
-      if(mouse.y > 0) {
-        var clouds = document.getElementsByClassName("cloud");
-        for(var i=0; i<clouds.length; i++) {
-          clouds[i].style.left = Math.min(myWidth*(Math.pow(mouse.y,2)/Math.pow(myHeight/2,2)) * -1, 0);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+function snow() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (var i = 0; i < flakeCount; i++) {
+        var flake = flakes[i],
+            x = mX,
+            y = mY,
+            minDist = 150,
+            x2 = flake.x,
+            y2 = flake.y;
+
+        var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+            dx = x2 - x,
+            dy = y2 - y;
+
+        if (dist < minDist) {
+            var force = minDist / (dist * dist),
+                xcomp = (x - x2) / dist,
+                ycomp = (y - y2) / dist,
+                deltaV = force / 2;
+
+            flake.velX -= deltaV * xcomp;
+            flake.velY -= deltaV * ycomp;
+
+        } else {
+            flake.velX *= .98;
+            if (flake.velY <= flake.speed) {
+                flake.velY = flake.speed
+            }
+            flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
         }
-      //}
 
-      var stars = document.getElementsByClassName('star');
-      for(var i=0; i<stars.length; i++) {
-        stars[i].style.opacity = (mouse.y/myHeight-0.6);
-      }
+        ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
+        flake.y += flake.velY;
+        flake.x += flake.velX;
+            
+        if (flake.y >= canvas.height || flake.y <= 0) {
+            reset(flake);
+        }
 
 
-      if(mouse.y > myHeight/2) {
-        document.getElementById("sun").style.opacity = Math.min((myHeight-mouse.y) / (myHeight/2) + 0.2, 0.5);
-        document.getElementById("horizon").style.opacity = (myHeight-mouse.y) / (myHeight/2) + 0.2;
+        if (flake.x >= canvas.width || flake.x <= 0) {
+            reset(flake);
+        }
 
-        document.getElementById("waterReflectionMiddle").style.opacity = (myHeight-mouse.y) / (myHeight/2) - 0.1;
-      } else {
-        document.getElementById("horizon").style.opacity = Math.min(mouse.y / (myHeight/2), 0.99);
+        ctx.beginPath();
+        ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    requestAnimationFrame(snow);
+};
 
-        document.getElementById("sun").style.opacity = Math.min(mouse.y / (myHeight/2), 0.5);
-        document.getElementById("waterReflectionMiddle").style.opacity = mouse.y / (myHeight/2) - 0.1; 
-      }
+function reset(flake) {
+    flake.x = Math.floor(Math.random() * canvas.width);
+    flake.y = 0;
+    flake.size = (Math.random() * 3) + 2;
+    flake.speed = (Math.random() * 1) + 0.5;
+    flake.velY = flake.speed;
+    flake.velX = 0;
+    flake.opacity = (Math.random() * 0.5) + 0.3;
+}
 
-    } else if (mouseIsDownDivision) {
-      var sunElement = document.getElementById("sun");
-      var water = document.getElementById("water");
-      var division = document.getElementById("division");
-      sunElement.style.height = (mouse.y).toString() + "px";
-      document.getElementById("sunDay").style.height = (mouse.y).toString() + "px";
-      division.style.top = (mouse.y).toString() + "px";
-      var waterHeight = myHeight-mouse.y;
-      water.style.height = waterHeight.toString() + "px";
+function init() {
+    for (var i = 0; i < flakeCount; i++) {
+        var x = Math.floor(Math.random() * canvas.width),
+            y = Math.floor(Math.random() * canvas.height),
+            size = (Math.random() * 3) + 2,
+            speed = (Math.random() * 1) + 0.5,
+            opacity = (Math.random() * 0.5) + 0.3;
 
-      document.getElementById("sun").style.height = (mouse.y).toString() + "px";
-      document.getElementById("sunDay").style.height = (mouse.y).toString() + "px";
-      document.getElementById("horizon").style.height = (mouse.y).toString() + "px";
-      document.getElementById("waterDistance").style.height = (myHeight-mouse.y).toString() + "px";
-      document.getElementById("oceanRippleContainer").style.height = (myHeight-mouse.y).toString() + "px";
-      document.getElementById("darknessOverlay").style.height = (myHeight-mouse.y).toString() + "px";
+        flakes.push({
+            speed: speed,
+            velY: speed,
+            velX: 0,
+            x: x,
+            y: y,
+            size: size,
+            stepSize: (Math.random()) / 30,
+            step: 0,
+            opacity: opacity
+        });
     }
 
+    snow();
+};
 
-}, false);
+window.addEventListener("resize",function(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+})
 
-function updateDimensions() {
-  if( typeof( window.innerWidth ) == 'number' ) {
-    //Non-IE
-    myWidth = window.innerWidth;
-    myHeight = window.innerHeight;
-  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
-
-    myWidth = document.documentElement.clientWidth;
-    myHeight = document.documentElement.clientHeight;
-  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-
-    myWidth = document.body.clientWidth;
-    myHeight = document.body.clientHeight;
-  }
-  
-}
-
-function startMove() {
-  mouseIsDown = true;
-}
-
-function stopMove() {
-  mouseIsDown = false;
-  mouseIsDownDivision = false;
-        var sky = document.getElementById("sun");
-}
-
-function startDraggingDivision() {
-
-  mouseIsDownDivision = true;
-}
-
-function windowResize() {
-  updateDimensions();
-  var skyHeight = document.getElementById("horizon").clientHeight;
-
-  
-
-
-  // update to new sky height
-  skyHeight = document.getElementById("sun").clientHeight;
-  document.getElementById("waterDistance").style.height = myHeight - skyHeight;
-   document.getElementById("division").style.top = skyHeight;
-}
+init();
