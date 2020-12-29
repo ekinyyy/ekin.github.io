@@ -4,32 +4,45 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<meta charset="utf-8" />
 		<title>饭饭饭饭饭饭饭饭饭饭饭饭</title>
+		<!--<script src="js/sun.js" type="text/javascript" charset="utf-8"></script>-->
+		<link rel="icon" type="image/x-icon" href="images/tree.ico"/>
 	</head>
 	<body>
 		
 <!--没有密秘没有密秘没有密秘没有密秘没有密秘没有密秘没有密秘-->
 
-<div class="container">
-	<div class="face"></div>
-	<div class="arm"></div>
-	<div class="arm right"></div>
-	<div class="eye">
-		<div class="white"></div>
-		<div class="blue"></div>
-		<div class="blue right"></div>
+<div class="window">
+		<div class="santa">
+			<div class="head">
+				<div class="face">
+					<div class="redhat">
+						<div class="whitepart"></div>
+						<div class="redpart"></div>
+						<div class="hatball"></div>
+					</div>
+					<div class="eyes"></div>
+					<div class="beard">
+						<div class="nouse"></div>
+						<div class="mouth"></div>
+					</div>
+				</div>
+				<div class="ears"></div>
+			</div>
+			<div class="body"></div>
+		</div>
 	</div>
-	<div class="blush"></div>
-	<div class="mouth">
-		<div class="tongue"></div>
+	<div class="message">
+		<h1>Merry Christmas!</h1>
+		<h2 class="copyright">LOVE YA ♥ MY BABE</h2>
 	</div>
-	<div class="foot"></div>
-	<div class="foot right"></div>
-</div>
+
+</body>
 
 <!--秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密-->
 <!--你真可爱你真可爱你真可爱你真可爱你真可爱你真可爱你真可爱-->
 <!--你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮-->
 <!--你都知道你都知道你都知道你都知道你都知道你都知道你都知道-->
-
+<!--什么时候能一起看日出日落呢 11.30-->
+<!--什么时候能一起过圣诞呢【期过圣诞】-->
 	</body>
 </html>
