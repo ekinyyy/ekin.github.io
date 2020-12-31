@@ -38,7 +38,7 @@ h1:after {
     text-align: center;
     background-color: #fff;
     border-radius: 20px;
-    width: 500px;
+    width: 550px;
     height: 350px;
     position: absolute;
     left: 50%;
