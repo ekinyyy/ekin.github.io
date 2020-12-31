@@ -34,14 +34,14 @@ h1:after {
     100% {color: #e12527;}
  }
 
-.main{
-  position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-}
-html, body {
-     width: 100%;
-     height: 100%;
+ .main{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 550px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
