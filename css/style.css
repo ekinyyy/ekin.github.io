@@ -1,51 +1,36 @@
-@import url(https://fonts.googleapis.com/css?family=Mountains+of+Christmas);
+@import url(https://fonts.googleapis.com/css?family=Niconne);
+h1 {
+  font-family: 'Niconne', cursive;
+  font-size: 50px;
+  color: #e12527;
+  text-align: center;
+}
+h1:before, h1:after {
+  content: "\2746";
+  display: inline-block;
+  font-size: 60px;
+  color: #38afaa;
+  -webkit-animation: my 4s infinite alternate;
+  animation: my 4s infinite alternate;
+}
+h1:before {
+  margin-right: 0.5em;
+}
+h1:after {
+  margin-left: 0.5em;
+}
+@-webkit-keyframes my {
+    0%   {color: #2e2f92;}
+    25%  {color: #38afaa;}
+    50%  {color: #5b59a7;}
+    75%  {color: #f7b21c;}
+    100% {color: #e12527;}
+ }
+@keyframes my {
+    0%   {color: #2e2f92;}
+    25%  {color: #38afaa;}
+    50%  {color: #5b59a7;}
+    75%  {color: #f7b21c;}
+    100% {color: #e12527;}
+ }
 
-body{
-  background:#be050b;
-  margin:0;
-  height:100%;
-  overflow:hidden;
-  
-}
-a{
-  text-decoration:none;
-}
-canvas{
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:1;
-}
-.ground{
-  background:#FFF;
-  height:20%;width:100%;
-  position:absolute;
-  bottom:0px;
-  z-index:1;
-  border-radius:100% 100% 0 0;
-  font-size:10px;
-  color:#666;
-  display:table;
-}
-.ground p{
-  display: table-cell; 
-  vertical-align: middle;
-  text-align:center;
-  width:100%;
-}
-.message{
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 400%;
-  text-align:center;
-  color:#FFF;
-  margin:40px auto;
-  height: 20%
-}
-.trees{
-  background: url(http://www.arasthemes.com/files/xmas/trees.svg) no-repeat center;
-  background-size: contain;
-  width:100%;
-  position:absolute;
-  bottom: 18%;
-  height: 60%;
-}

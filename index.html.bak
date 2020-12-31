@@ -4,45 +4,26 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<meta charset="utf-8" />
 		<title>饭饭饭饭饭饭饭饭饭饭饭饭</title>
-		<!--<script src="js/sun.js" type="text/javascript" charset="utf-8"></script>-->
-		<link rel="icon" type="image/x-icon" href="images/tree.ico"/>
+		<script src="js/sun.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		
 <!--没有密秘没有密秘没有密秘没有密秘没有密秘没有密秘没有密秘-->
 
-<div class="window">
-		<div class="santa">
-			<div class="head">
-				<div class="face">
-					<div class="redhat">
-						<div class="whitepart"></div>
-						<div class="redpart"></div>
-						<div class="hatball"></div>
-					</div>
-					<div class="eyes"></div>
-					<div class="beard">
-						<div class="nouse"></div>
-						<div class="mouth"></div>
-					</div>
-				</div>
-				<div class="ears"></div>
-			</div>
-			<div class="body"></div>
-		</div>
-	</div>
-	<div class="message">
-		<h1>Merry Christmas!</h1>
-		<h2 class="copyright">LOVE YA ♥ MY BABE</h2>
-	</div>
-
-</body>
+<h1>Happy New Year!</h1>
+<br>
+<h1>Nice To Meet You</h1>
+<br>
+<h1>2 0 2 0 ~ 2 0 2 1</h1>
+<br>
+<h1>Love Goes On</h1>
 
 <!--秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密秘密-->
 <!--你真可爱你真可爱你真可爱你真可爱你真可爱你真可爱你真可爱-->
 <!--你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮你真漂亮-->
 <!--你都知道你都知道你都知道你都知道你都知道你都知道你都知道-->
 <!--什么时候能一起看日出日落呢 11.30-->
-<!--什么时候能一起过圣诞呢【期过圣诞】-->
+<!--什么时候能一起过圣诞呢【期过圣诞-->
+<!--拜拜2020-->
 	</body>
 </html>
