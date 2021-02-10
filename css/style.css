@@ -1,36 +1,67 @@
-@import url(https://fonts.googleapis.com/css?family=Niconne);
-h1 {
-  font-family: 'Niconne', cursive;
-  font-size: 50px;
-  color: #e12527;
-  text-align: center;
+body {
+	background-color: #c6070c;
+	color: #ffe392;
+	font-family: "Lato", Helvetica, Arial, "ヒラギノ角ゴシック体 GB W6", Hiragino Sans GB W6, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	text-align: center;
 }
-h1:before, h1:after {
-  content: "\2746";
-  display: inline-block;
-  font-size: 60px;
-  color: #38afaa;
-  -webkit-animation: my 4s infinite alternate;
-  animation: my 4s infinite alternate;
-}
-h1:before {
-  margin-right: 0.5em;
-}
-h1:after {
-  margin-left: 0.5em;
-}
-@-webkit-keyframes my {
-    0%   {color: #2e2f92;}
-    25%  {color: #38afaa;}
-    50%  {color: #5b59a7;}
-    75%  {color: #f7b21c;}
-    100% {color: #e12527;}
- }
-@keyframes my {
-    0%   {color: #2e2f92;}
-    25%  {color: #38afaa;}
-    50%  {color: #5b59a7;}
-    75%  {color: #f7b21c;}
-    100% {color: #e12527;}
- }
 
+table {
+	padding-top: 80px;
+	 margin: auto;
+	 width: 30%;
+}
+
+.pinyin {
+	height: 20px;
+	font-size: 1.1em;
+	letter-spacing: 3px;
+	font-weight: 400;
+}
+
+td {
+	font-size: 8em;
+	text-align: center;
+	font-weight: 700;
+	padding: 0px;
+}
+
+h2 {
+	margin-top: 15px;
+	margin-bottom: 100px;
+	font-size: 3em;
+	text-transform: uppercase;
+	font-weight: 700;
+	word-spacing: 5px;
+}
+
+p {
+	font-weight: 700;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+}
+
+button {
+	background-color: #ef941a;
+	color: #fffbe2;
+	width: 200px;
+	position: relative;
+	border-radius: 5px;
+	margin: 0;
+	padding: 0;
+	line-height: 0.5;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+button:hover, button:focus {
+	background-color: #efa134;
+}
+
+button:active {
+	transform: translate(0px, 2px);
+	-webkit-transform: translate(0px, 2px);
+  }
